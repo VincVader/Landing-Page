@@ -23,7 +23,8 @@ $fw-bold: 700;
 
 $fs-sm: 12px;
 $fs-md: 15px;
-$fs-lg: 15px;
+$fs-lg: 18px;
+$fs-xl: 48px;
 
 $pading-vertical-xs: $base * 5;
 $pading-vertical-sm: $base * 15;
@@ -133,7 +134,7 @@ h6 {
 
 h1,
 h2 {
-    font-size: $base*12;
+    font-size: $fs-xl;
     margin-bottom: $base*7;
 }
 
@@ -512,10 +513,43 @@ h5 {
 // === STATS ===
 .section-stats {
     background-color: #E9EFFF;
+    display: flex;
+    @include quicksand;
 
-    .section-inner {
-        padding-top: $pading-vertical-sm;
-        padding-bottom: $pading-vertical-sm;
+    &__icon {
+        margin-bottom: $base*6;
+    }
+    &__number {
+        font-size: $fs-xl;
+        margin-bottom: $base*7;
+    }
+    &__text {
+        font-size: $fs-lg;
+        font-weight: $fw-medium;
+        width: 30%;
+        line-height: 1.5;
+    }
+
+    &__left,
+    &__right {
+        display: flex;
+        flex-basis: 50%;
+        flex-direction: column;
+        padding: $base*16 $base*22;
+    }
+
+    &__left {
+        background-color: #6888ff;
+        text-align: right;
+        color: #e9efff;
+        align-items: flex-end;
+        
+    }
+
+    &__right {
+        background-color: #e9efff;
+        color: #6888ff;
+        
     }
 }
 

@@ -307,10 +307,32 @@ h5 {
     margin: 0 16px; }
 
 .section-stats {
-  background-color: #E9EFFF; }
-  .section-stats .section-inner {
-    padding-top: 60px;
-    padding-bottom: 60px; }
+  background-color: #E9EFFF;
+  display: flex;
+  font-family: 'Quicksand', sans-serif; }
+  .section-stats__icon {
+    margin-bottom: 24px; }
+  .section-stats__number {
+    font-size: 48px;
+    margin-bottom: 28px; }
+  .section-stats__text {
+    font-size: 18px;
+    font-weight: 500;
+    width: 30%;
+    line-height: 1.5; }
+  .section-stats__left, .section-stats__right {
+    display: flex;
+    flex-basis: 50%;
+    flex-direction: column;
+    padding: 64px 88px; }
+  .section-stats__left {
+    background-color: #6888ff;
+    text-align: right;
+    color: #e9efff;
+    align-items: flex-end; }
+  .section-stats__right {
+    background-color: #e9efff;
+    color: #6888ff; }
 
 .section-blog {
   background-color: #F5F8FF; }
