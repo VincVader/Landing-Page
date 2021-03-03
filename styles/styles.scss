@@ -127,6 +127,26 @@ h5 {
     text-align: center;
 }
 
+.dots {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+    &__item {
+        width: $base*2;
+        height: $base*2;
+        border-radius: 100%;
+        background-color: #d1d6e3;
+        transition: $transition;
+        &-active {
+            background-color: $color-secondary;
+        }
+        & + & {
+            margin-left: $base*3;
+        }
+    }
+}
 // === / COMMON ===
 
 // === HEADER ===
@@ -221,6 +241,16 @@ h5 {
 // === HERO-IMAGE ===
 .section-hero-image {
     background-color: #f4f7ff;
+    position: relative;
+
+    .dots {
+        position: absolute;
+        bottom: $base*7;
+        cursor: pointer;
+        left: 50%;
+        transform: translateX(-50%);
+
+    }
 }
 
 .slider-hero-image {
@@ -232,24 +262,49 @@ h5 {
         height: $base * 142;
         text-align: center;
         background-size: cover;
-        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-position: 50% 100%;
 
         &-content {
             h2 {
                 font-weight: $fw-light;
             }
+
             span {
                 font-weight: $fw-medium;
             }
+
             .text {
-                line-height: 191%;
+                width: 55%;
+                margin: 0 auto $base*5;
+                line-height: 2;
+
             }
         }
     }
 }
 
 .icon-play {
-    
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: $base*13;
+    width: $base*13;
+    border-radius: 100%;
+    background-color: #fff;
+    box-shadow: 0px 10px 50px rgba(201, 209, 231, 0.6);
+
+    &::before {
+        margin-left: $base*4;
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-style: solid;
+        border-width: $base*2 $base*3;
+        border-left-color: $color-secondary;
+    }
 }
 
 // === / HERO-IMAGE ===
