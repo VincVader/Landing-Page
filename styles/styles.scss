@@ -421,7 +421,7 @@ h5 {
 
 // === FEATURES ===
 .section-features {
-    background: url(/images/bg-about-us-clouds.svg) no-repeat 50% 50%;
+    background: url(images/bg-about-us-clouds.svg) no-repeat 50% 50%;
 
     h4 {
         font-weight: $fw-medium;
@@ -624,7 +624,7 @@ h5 {
                     width: $base*16;
                     height: $base*16;
                     border-radius: 100%;
-                    background: #fff url(/images/loupe.svg) no-repeat 50% 50%;
+                    background: #fff url(images/loupe.svg) no-repeat 50% 50%;
                     transition: $transition;
 
                 }
@@ -687,7 +687,7 @@ h5 {
     display: block;
     width: $base*10;
     height: $base*10;
-    background: url(/images/icon-blog-arrow.svg) no-repeat 50% 50%;
+    background: url(images/icon-blog-arrow.svg) no-repeat 50% 50%;
 
     &--prev {
         right: 100%;
