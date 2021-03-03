@@ -183,8 +183,6 @@ h5 {
 }
 
 .btns {
-    display: inline-flex;
-
     .btn {
         width: $base*23;
         text-align: center;
@@ -421,19 +419,44 @@ h5 {
 
 // === FEATURES ===
 .section-features {
+    background: url(/images/bg-about-us-clouds.svg) no-repeat 50% 50%;
     h4 {
         font-weight: $fw-medium;
     }
+
+    .btns {
+        display: flex;
+        justify-content: center;
+    }
+
+    
 }
 
 .features-list {
-    margin: 0;
+    display: flex;
+    margin: 0 0 $base*54;
     padding: 0;
     list-style: none;
-    display: flex;
-    justify-content: space-around;
+
 
     &__item {
+        position: relative;
+        flex-basis: 25%;
+
+        &:not(:first-child) {
+            margin-left: $base*10;
+        }
+
+        &:not(:first-child)::before {
+            position: absolute;
+            top: $base*31;
+            left: -34px;
+            content: '';
+            height: 1px;
+            width: 28px;
+            background-color: #dae4fe;
+        }
+
         &-icon {
             display: flex;
             margin: 0 auto $base*8;
@@ -453,10 +476,34 @@ h5 {
         }
 
         &-text {
-            font-size: $fs-sm;
-            margin-bottom: $base*23;
             line-height: 2;
+            font-size: $fs-sm;
+            font-weight: $fw-light;
+            opacity: .8;
+            position: absolute;
+            width: 70%;
+            left: 15%;
+
+            
         }
+    }
+}
+
+.or-block {
+    display: inline-flex;
+    align-items: center;
+    font-weight: $fw-medium;
+    font-size: $fs-sm;
+
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        width: $base*4;
+        height: 1px;
+        background-color: #dae4fe;
+        margin: 0 $base*4;
+
     }
 }
 
