@@ -66,6 +66,20 @@ body {
     }
 }
 
+.input {
+    padding: $base*3 $base*4;
+    color: #7a85ad;
+    border: 1px solid transparent;
+    background: #efeff7;
+    border-radius: 2px;
+    font-size: $fs-sm;
+
+    &--size-lg {
+        padding: $base*5 $base*15 $base*5 $base*5;
+        border-radius: 5px;
+    }
+}
+
 .btn {
     @include quicksand;
 
@@ -79,6 +93,12 @@ body {
     border-radius: 2px;
     text-decoration: none;
     transition: $transition;
+    cursor: pointer;
+
+    &--size-lg {
+        padding: $base*5 $base*15;
+        border-radius: 5px;
+    }
 
     &--primary {
         background-color: #d2e1ff;
@@ -911,6 +931,48 @@ h5 {
 // === NEWSLETTER ===
 .section-newsletter {
     background-color: #FCFDFF;
+
+    .section-inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__left,
+    &__right {}
+
+    &__left {
+        flex-basis: 35%;
+
+        &-title {
+            @include quicksand;
+
+            color: #3D4F9F;
+            font-weight: $fw-bold;
+            margin-bottom: $base*5;
+            font-size: $fs-lg;
+        }
+
+        &-text {
+            line-height: 2;
+            font-size: $fs-md;
+        }
+    }
+
+    &__right {
+        flex-basis: 55%;
+    }
+}
+
+.form-newsletter {
+    display: flex;
+
+    .input {
+        flex-grow: 1;
+    }
+
+    .btn {
+        margin-left: $base*4;
+    }
 }
 
 // === / NEWSLETTER ===
