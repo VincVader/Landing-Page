@@ -78,6 +78,8 @@ h3 {
 h4 {
   font-size: 24px;
   margin-bottom: 92px; }
+  h4 span {
+    font-weight: 500; }
 
 h5 {
   font-family: 'Roboto', sans-serif;
@@ -91,9 +93,10 @@ h5 {
 
 .dots {
   display: flex;
-  margin: 0;
   padding: 0;
-  list-style: none; }
+  margin: 0;
+  list-style: none;
+  justify-content: center; }
   .dots__item {
     width: 8px;
     height: 8px;
@@ -105,17 +108,14 @@ h5 {
     .dots__item + .dots__item {
       margin-left: 12px; }
 
-.btns .btn {
-  width: 92px;
-  text-align: center; }
-
-.btns .btn:nth-child(1) {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0; }
-
-.btns .btn:nth-child(2) {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0; }
+.btns {
+  display: inline-flex; }
+  .btns .btn:nth-child(1) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0; }
+  .btns .btn:nth-child(2) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0; }
 
 .section-header .section-inner {
   padding-top: 20px;
@@ -180,8 +180,8 @@ h5 {
     transform: translateX(-50%); }
 
 .slider-hero-image {
-  margin: 0;
   padding: 0;
+  margin: 0;
   list-style: none; }
   .slider-hero-image__item {
     height: 568px;
@@ -314,7 +314,7 @@ h5 {
     margin-bottom: 24px; }
   .section-stats__number {
     font-size: 48px;
-    margin-bottom: 28px; }
+    margin-bottom: 20px; }
   .section-stats__text {
     font-size: 18px;
     font-weight: 500;
@@ -336,6 +336,96 @@ h5 {
 
 .section-blog {
   background-color: #F5F8FF; }
+
+.slider-wrapper {
+  margin-bottom: 100px;
+  position: relative; }
+
+.slider-blog {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border: 1px solid #D8E3FE;
+  background-color: #fff;
+  box-shadow: 0px 15px 50px #EFF4FF; }
+  .slider-blog__item {
+    padding: 60px 36px;
+    display: flex; }
+    .slider-blog__item-images, .slider-blog__item-content {
+      flex-basis: 45%; }
+    .slider-blog__item-images {
+      display: grid;
+      grid-template-rows: repeat(2, 120px);
+      grid-template-columns: repeat(3, 120px);
+      grid-gap: 12px; }
+      .slider-blog__item-images .image-link {
+        display: block;
+        border-radius: 5px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0px 15px 100px #E5EBF8; }
+        .slider-blog__item-images .image-link:hover .loupe {
+          opacity: 1; }
+        .slider-blog__item-images .image-link::before {
+          content: '';
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          position: absolute; }
+        .slider-blog__item-images .image-link .loupe {
+          position: absolute;
+          opacity: 0;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: block;
+          width: 64px;
+          height: 64px;
+          border-radius: 100%;
+          background: #fff url(/images/loupe.svg) no-repeat 50% 50%;
+          transition: 0.2s; }
+        .slider-blog__item-images .image-link img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain; }
+        .slider-blog__item-images .image-link__lg {
+          grid-row: 1/3;
+          grid-column: 1/3; }
+          .slider-blog__item-images .image-link__lg::before {
+            background: linear-gradient(transparent, rgba(255, 199, 53, 0.44)); }
+        .slider-blog__item-images .image-link__sm-1 {
+          grid-row: 1/2;
+          grid-column: 3/4; }
+          .slider-blog__item-images .image-link__sm-1::before {
+            background: linear-gradient(transparent, rgba(255, 53, 53, 0.48)); }
+        .slider-blog__item-images .image-link__sm-2 {
+          grid-row: 2/3;
+          grid-column: 3/4; }
+          .slider-blog__item-images .image-link__sm-2::before {
+            background: linear-gradient(transparent, rgba(53, 170, 255, 0.68)); }
+    .slider-blog__item-content {
+      margin-left: 10%; }
+      .slider-blog__item-content .text {
+        line-height: 171%;
+        font-size: 14px;
+        margin-bottom: 36px; }
+
+.btn-blog {
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: url(/images/icon-blog-arrow.svg) no-repeat 50% 50%; }
+  .btn-blog--prev {
+    right: 100%;
+    margin-right: 80px;
+    transform: translateY(-50%); }
+  .btn-blog--next {
+    margin-left: 80px;
+    left: 100%;
+    transform: translateY(-50%) rotate(180deg); }
 
 .section-quotes {
   background-color: #EAF0FF; }
