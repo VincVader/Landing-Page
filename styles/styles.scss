@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap');
+
+// === MIXIN ===
+@mixin roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+@mixin quicksand {
+    font-family: 'Quicksand', sans-serif;
+}
+
+// === / MIXIN ===
+
+// === VARIABLES ===
+
+$base: 4px;
+
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+
+$fs-sm: 12px;
+$fs-md: 15px;
+$fs-lg: 15px;
+
+$pading-vertical-xs: $base * 5;
+$pading-vertical-sm: $base * 15;
+$pading-vertical: $base * 30;
+
+$color-divider: #D8E3FE;
+$color-primary: #697ca7;
+$color-secondary: #5E81FE;
+$color-header: #3d4f9f;
+
+$transition: .2s;
+
+// === / VARIABLES ===
+
+// === COMMON ===
+body {
+    @include roboto;
+    color: #8d96bd;
+}
+
+.section-outer {
+    border-bottom: 1px solid $color-divider;
+}
+
+.section-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: $pading-vertical;
+    padding-bottom: $pading-vertical;
+
+    &--wide {
+        max-width: 1200px;
+    }
+}
+
+.btn {
+    @include quicksand;
+
+    font-weight: $fw-bold;
+    font-size: $fs-sm;
+    padding: $base*3 $base*4;
+    margin: 0;
+    border: 0;
+    background-color: none;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: $transition;
+
+    &--primary {
+        background-color: #d2e1ff;
+        color: #3A79FF;
+
+        &:hover {
+            background-color: darken(#d2e1ff, 5%);
+            color: darken(#3A79FF, 5%);
+        }
+    }
+
+}
+
+.btn-wrapper {
+    margin-left: $base*11;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @include quicksand;
+    padding: 0;
+    margin: 0;
+    font-weight: $fw-regular;
+    color: $color-header;
+}
+
+h1,
+h2 {
+    font-size: $base*12;
+    margin-bottom: $base*7;
+}
+
+h3 {
+    font-size: $base*9;
+}
+
+h4 {
+    font-size: $base*6;
+}
+
+h5 {
+    @include roboto;
+    font-size: 10px;
+    margin-bottom: $base*4;
+    font-weight: $fw-medium;
+    letter-spacing: 0.1em;
+}
+
+.ta-c {
+    text-align: center;
+}
+
+// === / COMMON ===
+
+// === HEADER ===
+.section-header {
+    .section-inner {
+        padding-top: $pading-vertical-xs;
+        padding-bottom: $pading-vertical-xs;
+
+    }
+}
+
+.main-navigation {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    margin-right: $base * 18;
+    width: $base * 6;
+    height: $base * 6;
+    border-radius: 100%;
+    background-color: $color-secondary;
+}
+
+.nav-wrapper {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    &__item {
+        &+& {
+            margin-left: $base * 10;
+        }
+
+        &-link {
+            @include quicksand;
+            font-size: $fs-sm;
+            color: $color-primary;
+            text-decoration: none;
+            font-weight: $fw-medium;
+            transition: $transition;
+
+            &:hover {
+                color: $color-secondary;
+            }
+
+            &--active {
+                font-weight: $fw-bold;
+                color: $color-secondary;
+            }
+
+        }
+    }
+}
+
+.socials {
+    margin-left: auto;
+}
+
+.socials-wrapper {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    align-items: center;
+
+    &__item {
+        &+& {
+            margin-left: $base * 10;
+        }
+
+
+        &-link {
+            path {
+                fill: $color-primary;
+                transition: $transition;
+            }
+
+            &:hover {
+                path {
+                    fill: $color-secondary;
+                }
+            }
+
+        }
+    }
+}
+
+// === / HEADER ===
+
+// === HERO-IMAGE ===
+.section-hero-image {
+    background-color: #f4f7ff;
+}
+
+.slider-hero-image {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &__item {
+        height: $base * 142;
+        text-align: center;
+        background-size: cover;
+        background-position: 50% 50%;
+
+        &-content {
+            h2 {
+                font-weight: $fw-light;
+            }
+            span {
+                font-weight: $fw-medium;
+            }
+            .text {
+                line-height: 191%;
+            }
+        }
+    }
+}
+
+.icon-play {
+    
+}
+
+// === / HERO-IMAGE ===
+
+// === CUSTOMERS ===
+.section-customers {
+    .section-inner {
+        padding-top: $pading-vertical-sm;
+        padding-bottom: $pading-vertical-sm;
+    }
+}
+
+// === / CUSTOMERS ===
+
+// === PLAN-AND-MANAGE ===
+.section-plan-and-manage {
+    background-color: #F5F8FF;
+}
+
+// === / PLAN-AND-MANAGE ===
+
+// === FEATURES ===
+.section-features {}
+
+// === / FEATURES ===
+
+// === STATS ===
+.section-stats {
+    background-color: #E9EFFF;
+
+    .section-inner {
+        padding-top: $pading-vertical-sm;
+        padding-bottom: $pading-vertical-sm;
+    }
+}
+
+// === / STATS ===
+
+// === BLOG ===
+.section-blog {
+    background-color: #F5F8FF;
+}
+
+// === / BLOG ===
+
+// === QUOTES ===
+.section-quotes {
+    background-color: #EAF0FF;
+}
+
+// === / QUOTES ===
+
+// === FAQ ===
+.section-faq {}
+
+// === / FAQ ===
+
+// === GET-STARTED ===
+.section-get-started {
+    background-color: #6888FF;
+}
+
+// === / GET-STARTED ===
+
+// === NEWSLETTER ===
+.section-newsletter {
+    background-color: #FCFDFF;
+}
+
+// === / NEWSLETTER ===
+
+// === FOOTER ===
+.section-footer {
+    border-bottom: 0;
+
+    .section-inner {
+        padding-top: $pading-vertical-sm;
+        padding-bottom: $pading-vertical-sm;
+    }
+}
+
+.copyright {
+    @include quicksand;
+
+    margin-left: $base*24;
+    margin-top: $base*7;
+    color: #aeb8d0;
+    font-size: $fs-sm;
+    font-weight: $fw-medium;
+}
+
+// === / FOOTER ===
