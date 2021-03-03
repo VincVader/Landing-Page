@@ -88,6 +88,16 @@ body {
             background-color: darken(#d2e1ff, 5%);
             color: darken(#3A79FF, 5%);
         }
+
+        &-inverted {
+            background-color: #fff;
+            color: #3A79FF;
+
+            &:hover {
+                background-color: darken(#fff, 5%);
+                color: darken(#3A79FF, 5%);
+            }
+        }
     }
 
     &--secondary {
@@ -119,6 +129,7 @@ body {
             color: darken(#D43F3F, 5%);
         }
     }
+
     &--dead {
         background-color: #E8ECF4;
         color: #7382A3;
@@ -156,6 +167,7 @@ h1,
 h2 {
     font-size: $fs-xl;
     margin-bottom: $base*7;
+    font-weight: $fw-light;
 }
 
 h3 {
@@ -495,7 +507,7 @@ h5 {
             font-weight: $fw-light;
             opacity: .8;
             position: absolute;
-            width: 70%;
+            max-width: 70%;
             left: 15%;
 
 
@@ -860,7 +872,38 @@ h5 {
 
 // === GET-STARTED ===
 .section-get-started {
-    background-color: #6888FF;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(229.32deg, #6888FF 12.77%, #5E80FF 73.11%);
+
+    &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url(../images/bg-get-started.svg) no-repeat 50% 50%;
+        z-index: 5;
+    }
+
+    h2,
+    h5 {
+        color: #fff;
+    }
+
+    .section-inner {
+        z-index: 10;
+        position: relative;
+    }
+
+    .text {
+        line-height: 2;
+        max-width: 70%;
+        margin: 0 auto $base*5;
+        margin-bottom: $base*10;
+    }
 }
 
 // === / GET-STARTED ===
