@@ -72,6 +72,7 @@ body {
     font-weight: $fw-bold;
     font-size: $fs-sm;
     padding: $base*3 $base*4;
+    white-space: nowrap;
     margin: 0;
     border: 0;
     background: none;
@@ -116,6 +117,15 @@ body {
         &:hover {
             background-color: darken(#FFD7D7, 5%);
             color: darken(#D43F3F, 5%);
+        }
+    }
+    &--dead {
+        background-color: #E8ECF4;
+        color: #7382A3;
+
+        &:hover {
+            background-color: darken(#E8ECF4, 5%);
+            color: darken(#7382A3, 5%);
         }
     }
 
@@ -164,6 +174,7 @@ h5 {
     margin-bottom: $base*4;
     font-weight: $fw-medium;
     letter-spacing: 0.1em;
+    text-transform: uppercase;
 }
 
 .ta-c {
@@ -706,7 +717,8 @@ h5 {
 
 // === QUOTES ===
 .section-quotes {
-    background: linear-gradient(#eaf0ff, #f6f9ff);;
+    background: linear-gradient(#eaf0ff, #f6f9ff);
+    ;
 
     .section-inner {
         display: flex;
@@ -733,10 +745,11 @@ h5 {
 
 .slider-quotes {
     @include list-null;
+
     margin-bottom: $base*20;
 
     &__item {
-        border: 1px solid &$color-divider;
+        border: 1px solid $color-divider;
         background-color: #fff;
         padding: $base*10 $base*18 $base*13;
         position: relative;
@@ -768,6 +781,80 @@ h5 {
 
 // === FAQ ===
 .section-faq {}
+
+.faq-accordion {
+    @include list-null;
+
+    &__item {
+        margin-bottom: $base*4;
+        $parent: &;
+
+        border-bottom: 1px solid $color-divider;
+
+        &--active {
+
+
+            #{$parent}-trigger {
+                color: #495274;
+                font-weight: $fw-bold;
+
+                &-icon {
+                    transform: rotate(0);
+
+                    .arrow {
+                        stroke: #495274;
+                    }
+                }
+            }
+
+            #{$parent}-content {
+                display: flex;
+            }
+
+        }
+
+        &-trigger {
+            display: flex;
+            cursor: pointer;
+            padding: $base*4;
+
+
+            &-icon {
+                width: $base*4;
+                text-align: center;
+                margin-right: $base*4;
+                transform: rotate(180deg);
+
+                .arrow {
+                    stroke: #8e96b7;
+                }
+            }
+
+            &-text {
+                font-size: $fs-md;
+            }
+        }
+
+        &-content {
+            display: none;
+            padding: 0 $base*4 $base*4 $base*12;
+
+            &-text {
+                flex-grow: 1;
+                line-height: 2;
+                font-size: $fs-sm;
+            }
+
+            &-button {
+                margin-left: $base*15;
+
+                .btn {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
 
 // === / FAQ ===
 
