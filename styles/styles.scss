@@ -136,6 +136,10 @@ h6 {
     margin: 0;
     font-weight: $fw-regular;
     color: $color-header;
+
+    span {
+        font-weight: $fw-medium;
+    }
 }
 
 h1,
@@ -152,10 +156,6 @@ h3 {
 h4 {
     font-size: $base*6;
     margin-bottom: $base*23;
-
-    span {
-        font-weight: $fw-medium;
-    }
 }
 
 h5 {
@@ -706,7 +706,62 @@ h5 {
 
 // === QUOTES ===
 .section-quotes {
-    background-color: #EAF0FF;
+    background: linear-gradient(#eaf0ff, #f6f9ff);;
+
+    .section-inner {
+        display: flex;
+        justify-content: space-between;
+
+
+    }
+
+    &__left,
+    &__right {
+        flex-basis: 45%;
+    }
+
+    &__left {
+        .text {
+            line-height: 2;
+        }
+    }
+
+    &__right {
+        margin-left: 10%;
+    }
+}
+
+.slider-quotes {
+    @include list-null;
+    margin-bottom: $base*20;
+
+    &__item {
+        border: 1px solid &$color-divider;
+        background-color: #fff;
+        padding: $base*10 $base*18 $base*13;
+        position: relative;
+        box-shadow: 0 5px 50px #f3f5fa;
+
+        &-text {
+            line-height: 2;
+            font-size: $fs-md;
+            color: #676F95;
+
+        }
+
+        &-photo {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: $base*16;
+            height: $base*16;
+            border-radius: 100%;
+            overflow: hidden;
+            background-color: #fff;
+            margin-top: -$base*8;
+        }
+    }
 }
 
 // === / QUOTES ===
