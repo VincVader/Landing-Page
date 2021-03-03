@@ -32,6 +32,18 @@ body {
     .btn--primary:hover {
       background-color: #b9d0ff;
       color: #2168ff; }
+  .btn--secondary {
+    background-color: #4C85FF;
+    color: #fff; }
+    .btn--secondary:hover {
+      background-color: #3374ff;
+      color: #f2f2f2; }
+  .btn--disabled {
+    background-color: #d2e1ff;
+    color: #3A79FF; }
+    .btn--disabled:hover {
+      background-color: #b9d0ff;
+      color: #2168ff; }
 
 .btn-wrapper {
   margin-left: 44px; }
@@ -188,10 +200,30 @@ h5 {
 
 .section-customers .section-inner {
   padding-top: 60px;
-  padding-bottom: 60px; }
+  padding-bottom: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .section-customers .section-inner a {
+    opacity: .3;
+    transition: 0.2s; }
+    .section-customers .section-inner a:hover {
+      opacity: 1; }
 
 .section-plan-and-manage {
   background-color: #F5F8FF; }
+  .section-plan-and-manage__content {
+    width: 50%; }
+    .section-plan-and-manage__content h3 {
+      font-weight: 300;
+      margin-bottom: 28px; }
+    .section-plan-and-manage__content span {
+      font-weight: 500; }
+    .section-plan-and-manage__content .text {
+      line-height: 2;
+      margin-bottom: 48px; }
+    .section-plan-and-manage__content .btns {
+      display: flex; }
 
 .section-stats {
   background-color: #E9EFFF; }

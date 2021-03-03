@@ -82,6 +82,26 @@ body {
         }
     }
 
+    &--secondary {
+        background-color: #4C85FF;
+        color: #fff;
+
+        &:hover {
+            background-color: darken(#4C85FF, 5%);
+            color: darken(#fff, 5%);
+        }
+    }
+
+    &--disabled {
+        background-color: #d2e1ff;
+        color: #3A79FF;
+
+        &:hover {
+            background-color: darken(#d2e1ff, 5%);
+            color: darken(#3A79FF, 5%);
+        }
+    }
+
 }
 
 .btn-wrapper {
@@ -132,21 +152,24 @@ h5 {
     margin: 0;
     padding: 0;
     list-style: none;
-    
+
     &__item {
         width: $base*2;
         height: $base*2;
         border-radius: 100%;
         background-color: #d1d6e3;
         transition: $transition;
+
         &-active {
             background-color: $color-secondary;
         }
-        & + & {
+
+        &+& {
             margin-left: $base*3;
         }
     }
 }
+
 // === / COMMON ===
 
 // === HEADER ===
@@ -314,6 +337,19 @@ h5 {
     .section-inner {
         padding-top: $pading-vertical-sm;
         padding-bottom: $pading-vertical-sm;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        a {
+            opacity: .3;
+            transition: $transition;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
     }
 }
 
@@ -322,6 +358,29 @@ h5 {
 // === PLAN-AND-MANAGE ===
 .section-plan-and-manage {
     background-color: #F5F8FF;
+
+    &__content {
+        width: 50%;
+
+        h3 {
+            font-weight: $fw-light;
+            margin-bottom: $base*7;
+        }
+
+        span {
+            font-weight: $fw-medium;
+        }
+
+        .text {
+            line-height: 2;
+            margin-bottom: $base*12;
+        }
+
+        .btns {
+            display: flex;
+        }
+    }
+
 }
 
 // === / PLAN-AND-MANAGE ===
