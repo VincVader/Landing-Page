@@ -218,7 +218,7 @@ h6 {
     }
 }
 
-h1,
+
 h2 {
     font-size: $fs-xl;
     margin-bottom: $base*7;
@@ -284,6 +284,17 @@ h5 {
     }
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0)
+}
+
 // === / COMMON ===
 
 // === HEADER ===
@@ -301,11 +312,16 @@ h5 {
 }
 
 .logo {
-    margin-right: $base * 18;
-    width: $base * 6;
-    height: $base * 6;
-    border-radius: 100%;
-    background-color: $color-blue-400;
+
+    &__link {
+        display: block;
+        margin-right: $base * 18;
+        width: $base * 6;
+        height: $base * 6;
+        border-radius: 100%;
+        background-color: $color-blue-400;
+
+    }
 }
 
 .nav-wrapper {
@@ -374,7 +390,6 @@ h5 {
 
 // === HERO-IMAGE ===
 .section-hero-image {
-    background-color: $color-blue-50;
     position: relative;
 
     .dots {

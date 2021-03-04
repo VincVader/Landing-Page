@@ -101,7 +101,6 @@ h6 {
   h6 span {
     font-weight: 500; }
 
-h1,
 h2 {
   font-size: 48px;
   margin-bottom: 28px;
@@ -152,6 +151,16 @@ h5 {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0; }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0); }
+
 .section-header .section-inner {
   padding-top: 20px;
   padding-bottom: 20px; }
@@ -160,7 +169,8 @@ h5 {
   display: flex;
   align-items: center; }
 
-.logo {
+.logo__link {
+  display: block;
   margin-right: 72px;
   width: 24px;
   height: 24px;
@@ -205,7 +215,6 @@ h5 {
     fill: #5e81fe; }
 
 .section-hero-image {
-  background-color: #e9efff;
   position: relative; }
   .section-hero-image .dots {
     position: absolute;
