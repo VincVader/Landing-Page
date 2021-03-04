@@ -91,36 +91,28 @@ h6 {
   font-family: 'Quicksand', sans-serif;
   padding: 0;
   margin: 0;
-  font-weight: 400;
-  color: #3d4f9f; }
-  h1 span,
-  h2 span,
-  h3 span,
-  h4 span,
-  h5 span,
-  h6 span {
-    font-weight: 500; }
+  font-weight: 400; }
+
+span {
+  font-weight: 500; }
 
 h2 {
-  font-size: 48px;
-  margin-bottom: 28px;
-  font-weight: 300; }
-
-h3 {
-  font-size: 36px;
-  margin-bottom: 28px; }
-
-h4 {
-  font-size: 24px;
-  margin-bottom: 92px; }
-
-h5 {
   font-family: 'Roboto', sans-serif;
-  font-size: 10px;
+  letter-spacing: 1px;
   margin-bottom: 16px;
+  font-size: 10px;
   font-weight: 500;
-  letter-spacing: 0.1em;
+  color: #3d4f9f;
   text-transform: uppercase; }
+
+.section-subtitle {
+  font-family: 'Quicksand', sans-serif;
+  margin-bottom: 28px;
+  font-size: 48px;
+  font-weight: 300;
+  color: #3d4f9f; }
+  .section-subtitle span {
+    font-weight: 500; }
 
 .ta-c {
   text-align: center; }
@@ -233,10 +225,9 @@ h5 {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 100%; }
-    .slider-hero-image__item-content h2 {
-      font-weight: 300; }
-    .slider-hero-image__item-content span {
-      font-weight: 500; }
+    .slider-hero-image__item-content .section-subtitle {
+      font-size: 48px;
+      margin-bottom: 28px; }
     .slider-hero-image__item-content .text {
       width: 55%;
       margin: 0 auto 20px;
@@ -278,10 +269,9 @@ h5 {
       position: absolute;
       top: 20%;
       left: 45%; }
-    .section-plan-and-manage__content h3 {
-      font-weight: 300; }
-    .section-plan-and-manage__content span {
-      font-weight: 500; }
+    .section-plan-and-manage__content .section-subtitle {
+      font-size: 36px;
+      margin-bottom: 28px; }
     .section-plan-and-manage__content .text {
       line-height: 2;
       margin-bottom: 48px; }
@@ -290,8 +280,9 @@ h5 {
 
 .section-features {
   background: url(../images/bg-about-us-clouds.svg) no-repeat 50% 50%; }
-  .section-features h4 {
-    font-weight: 500; }
+  .section-features .section-subtitle {
+    font-size: 24px;
+    margin-bottom: 92px; }
   .section-features .btns {
     display: flex;
     justify-content: center; }
@@ -380,6 +371,9 @@ h5 {
 
 .section-blog {
   background-color: #f5f8ff; }
+  .section-blog .section-subtitle {
+    font-size: 24px;
+    margin-bottom: 92px; }
 
 .slider-wrapper {
   margin-bottom: 100px;
@@ -449,11 +443,16 @@ h5 {
           .slider-blog__item-images .image-link__sm-2::before {
             background: linear-gradient(transparent, rgba(53, 170, 255, 0.68)); }
     .slider-blog__item-content {
-      margin-left: 10%; }
+      margin-left: 7%; }
+      .slider-blog__item-content h3 {
+        font-size: 36px;
+        font-weight: 400;
+        color: #3d4f9f;
+        margin-bottom: 32px; }
       .slider-blog__item-content .text {
         line-height: 171%;
-        font-size: 15px;
-        margin-bottom: 36px; }
+        font-size: 14px;
+        margin-bottom: 48px; }
 
 .btn-blog {
   position: absolute;
@@ -476,10 +475,15 @@ h5 {
   .section-quotes .section-inner {
     display: flex;
     justify-content: space-between; }
+    .section-quotes .section-inner .section-subtitle {
+      font-size: 36px;
+      color: #3d4f9f; }
   .section-quotes__left, .section-quotes__right {
     flex-basis: 45%; }
   .section-quotes__left .text {
-    line-height: 2; }
+    line-height: 2;
+    font-size: 12px;
+    width: 70%; }
   .section-quotes__right {
     margin-left: 10%; }
 
@@ -509,6 +513,10 @@ h5 {
       overflow: hidden;
       background-color: #ffffff;
       margin-top: -32px; }
+
+.section-subtitle {
+  font-size: 24px;
+  margin-bottom: 68px; }
 
 .faq-accordion {
   padding: 0;
@@ -566,8 +574,11 @@ h5 {
     background: url(../images/bg-get-started.svg) no-repeat 50% 50%;
     z-index: 5; }
   .section-get-started h2,
-  .section-get-started h5 {
+  .section-get-started .section-subtitle {
     color: #ffffff; }
+  .section-get-started .section-subtitle {
+    font-size: 48px;
+    margin-bottom: 28px; }
   .section-get-started .section-inner {
     z-index: 10;
     position: relative; }
@@ -575,7 +586,9 @@ h5 {
     line-height: 2;
     max-width: 70%;
     margin: 0 auto 20px;
-    margin-bottom: 40px; }
+    margin-bottom: 40px;
+    font-size: 14px;
+    letter-spacing: 0.03em; }
 
 .section-newsletter {
   background-color: #f5f8ff; }
