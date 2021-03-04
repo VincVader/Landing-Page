@@ -19,27 +19,61 @@
 // === / MIXIN ===
 
 // === VARIABLES ===
-
 $base: 4px;
+
+$pading-vertical-xs: $base * 5;
+$pading-vertical-sm: $base * 15;
+$pading-vertical: $base * 30;
+
 
 $fw-light: 300;
 $fw-regular: 400;
 $fw-medium: 500;
 $fw-bold: 700;
 
+$fs-xs: 10px;
 $fs-sm: 12px;
 $fs-md: 15px;
 $fs-lg: 18px;
 $fs-xl: 48px;
 
-$pading-vertical-xs: $base * 5;
-$pading-vertical-sm: $base * 15;
-$pading-vertical: $base * 30;
+$color-white: #ffffff;
 
-$color-divider: #D8E3FE;
-$color-primary: #697ca7;
-$color-secondary: #5E81FE;
-$color-header: #3d4f9f;
+$color-yellow-500: #ffc735;
+
+// Cian
+$color-cian-500: #35aaff;
+
+// Red
+$color-red-400: #ffd7d7;
+$color-red-500: #ff3535;
+$color-red-600: #d43f3f;
+
+// Gray
+$color-gray-50: #f5f8ff;
+$color-gray-100: #c7d3ff;
+$color-gray-200: #aeb8d0;
+$color-gray-300: #adb4d2;
+$color-gray-400: #8e96b7;
+$color-gray-500: #8d96bd;
+$color-gray-600: #7382a3;
+$color-gray-700: #7a85ad;
+$color-gray-800: #676f95;
+$color-gray-900: #495274;
+
+// Blue
+$color-blue-50: #e9efff;
+$color-blue-100: #6888ff;
+$color-blue-200: #6188ff;
+$color-blue-300: #5e80ff;
+$color-blue-400: #5e81fe;
+$color-blue-500: #4c85ff;
+$color-blue-600: #5283ff;
+$color-blue-700: #3a79ff;
+$color-blue-800: #4074f8;
+$color-blue-900: #3d4f9f;
+
+$color-divider: $color-gray-100;
 
 $transition: .2s;
 
@@ -48,7 +82,7 @@ $transition: .2s;
 // === COMMON ===
 body {
     @include roboto;
-    color: #8d96bd;
+    color: $color-gray-500;
 }
 
 .section-outer {
@@ -68,15 +102,15 @@ body {
 
 .input {
     padding: $base*3 $base*4;
-    color: #7a85ad;
+    color: $color-gray-700;
     border: 1px solid transparent;
-    background: #efeff7;
-    border-radius: 2px;
+    background: $color-blue-50;
+    border-radius: $base/2;
     font-size: $fs-sm;
 
     &--size-lg {
         padding: $base*5 $base*15 $base*5 $base*5;
-        border-radius: 5px;
+        border-radius: $base;
     }
 }
 
@@ -90,73 +124,74 @@ body {
     margin: 0;
     border: 0;
     background: none;
-    border-radius: 2px;
+    border-radius: $base/2;
     text-decoration: none;
     transition: $transition;
     cursor: pointer;
 
     &--size-lg {
         padding: $base*5 $base*15;
-        border-radius: 5px;
+        border-radius: $base;
     }
 
     &--primary {
-        background-color: #d2e1ff;
-        color: #3A79FF;
+        color: $color-blue-700;
+        background-color: $color-gray-100;
 
         &:hover {
-            background-color: darken(#d2e1ff, 5%);
-            color: darken(#3A79FF, 5%);
+            background-color: darken($color-gray-100, 5%);
+            color: darken($color-blue-700, 5%);
         }
 
         &-inverted {
-            background-color: #fff;
-            color: #3A79FF;
+            background-color: $color-white;
+            color: $color-blue-700;
 
             &:hover {
-                background-color: darken(#fff, 5%);
-                color: darken(#3A79FF, 5%);
+                background-color: darken($color-white, 5%);
+                color: darken($color-blue-700, 5%);
             }
         }
     }
 
     &--secondary {
-        background-color: #4C85FF;
-        color: #fff;
+        background-color: $color-blue-500;
+        color: $color-white;
 
         &:hover {
-            background-color: darken(#4C85FF, 5%);
-            color: darken(#fff, 5%);
+            background-color: darken($color-blue-500, 5%);
+            color: darken($color-white, 5%);
         }
     }
 
     &--no-bg {
-        border: 1px solid #D1D1E4;
-        color: #ADB4D2;
+        color: $color-gray-300;
+        border: 1px solid $color-gray-100;
 
         &:hover {
-            border-color: darken(#D1D1E4, 10%);
-            color: darken(#ADB4D2, 10%);
+            color: darken($color-gray-300, 10%);
+            border: 1px solid darken($color-gray-100, 10%);
+            ;
         }
     }
 
     &--red {
-        background-color: #FFD7D7;
-        color: #D43F3F;
+        background-color: $color-red-400;
+        color: $color-red-600;
 
         &:hover {
-            background-color: darken(#FFD7D7, 5%);
-            color: darken(#D43F3F, 5%);
+            background-color: darken($color-red-400, 5%);
+            color: darken($color-red-600, 5%);
         }
     }
 
     &--dead {
-        background-color: #E8ECF4;
-        color: #7382A3;
+        background-color: $color-gray-50;
+        color: $color-gray-600;
 
         &:hover {
-            background-color: darken(#E8ECF4, 5%);
-            color: darken(#7382A3, 5%);
+            background-color: darken($color-gray-50, 5%);
+            color: darken($color-gray-600, 5%);
         }
     }
 
@@ -176,7 +211,7 @@ h6 {
     padding: 0;
     margin: 0;
     font-weight: $fw-regular;
-    color: $color-header;
+    color: $color-blue-900;
 
     span {
         font-weight: $fw-medium;
@@ -202,7 +237,7 @@ h4 {
 
 h5 {
     @include roboto;
-    font-size: 10px;
+    font-size: $fs-xs;
     margin-bottom: $base*4;
     font-weight: $fw-medium;
     letter-spacing: 0.1em;
@@ -222,11 +257,11 @@ h5 {
         width: $base*2;
         height: $base*2;
         border-radius: 100%;
-        background-color: #d1d6e3;
+        background-color: $color-gray-200;
         transition: $transition;
 
         &-active {
-            background-color: $color-secondary;
+            background-color: $color-blue-400;
         }
 
         &+& {
@@ -270,7 +305,7 @@ h5 {
     width: $base * 6;
     height: $base * 6;
     border-radius: 100%;
-    background-color: $color-secondary;
+    background-color: $color-blue-400;
 }
 
 .nav-wrapper {
@@ -285,18 +320,18 @@ h5 {
         &-link {
             @include quicksand;
             font-size: $fs-sm;
-            color: $color-primary;
+            color: $color-gray-800;
             text-decoration: none;
             font-weight: $fw-medium;
             transition: $transition;
 
             &:hover {
-                color: $color-secondary;
+                color: $color-blue-400;
             }
 
             &--active {
                 font-weight: $fw-bold;
-                color: $color-secondary;
+                color: $color-blue-400;
             }
 
         }
@@ -321,13 +356,13 @@ h5 {
 
         &-link {
             path {
-                fill: $color-primary;
+                fill: $color-gray-800;
                 transition: $transition;
             }
 
             &:hover {
                 path {
-                    fill: $color-secondary;
+                    fill: $color-blue-400;
                 }
             }
 
@@ -339,7 +374,7 @@ h5 {
 
 // === HERO-IMAGE ===
 .section-hero-image {
-    background-color: #f4f7ff;
+    background-color: $color-blue-50;
     position: relative;
 
     .dots {
@@ -388,8 +423,8 @@ h5 {
     height: $base*13;
     width: $base*13;
     border-radius: 100%;
-    background-color: #fff;
-    box-shadow: 0px 10px 50px rgba(201, 209, 231, 0.6);
+    background-color: $color-white;
+    box-shadow: 0px $base*2 $base*12 rgba(201, 209, 231, 0.6);
 
     svg {
         width: $base*3;
@@ -424,7 +459,7 @@ h5 {
 
 // === PLAN-AND-MANAGE ===
 .section-plan-and-manage {
-    background-color: #F5F8FF;
+    background-color: $color-gray-50;
     position: relative;
 
 
@@ -486,21 +521,24 @@ h5 {
 
 
     &__item {
+        $margin-left: $base*10;
+        $divider-width: $base*7;
+
         position: relative;
         flex-basis: 25%;
 
         &:not(:first-child) {
-            margin-left: $base*10;
+            margin-left: $margin-left;
         }
 
         &:not(:first-child)::before {
             position: absolute;
             top: $base*31;
-            left: -34px;
-            content: '';
+            left: - $divider-width - ($margin-left - $divider-width)/2;
+            width: $divider-width;
             height: 1px;
-            width: 28px;
-            background-color: #dae4fe;
+            content: '';
+            background-color: $color-gray-100;
         }
 
         &-icon {
@@ -511,11 +549,11 @@ h5 {
             width: $base*17;
             height: $base*17;
             border-radius: 100%;
-            background-color: #f1f5ff;
+            background-color: $color-blue-50;
         }
 
         &-title {
-            color: #4074F8;
+            color: $color-blue-800;
             font-weight: $fw-bold;
             font-size: $fs-md;
             margin-bottom: $base*6;
@@ -547,7 +585,7 @@ h5 {
         display: block;
         width: $base*4;
         height: 1px;
-        background-color: #dae4fe;
+        background-color: $color-gray-100;
         margin: 0 $base*4;
 
     }
@@ -557,7 +595,7 @@ h5 {
 
 // === STATS ===
 .section-stats {
-    background-color: #E9EFFF;
+    background-color: $color-blue-50;
     display: flex;
     @include quicksand;
 
@@ -586,17 +624,16 @@ h5 {
     }
 
     &__left {
-        background-color: #6888ff;
+        background-color: $color-blue-300;
+        display: flex;
         text-align: right;
-        color: #e9efff;
+        color: $color-blue-50;
         align-items: flex-end;
 
     }
 
     &__right {
-        background-color: #e9efff;
-        color: #6888ff;
-
+        color: $color-blue-300;
     }
 }
 
@@ -604,7 +641,7 @@ h5 {
 
 // === BLOG ===
 .section-blog {
-    background-color: #F5F8FF;
+    background-color: $color-gray-50;
 }
 
 .slider-wrapper {
@@ -615,8 +652,8 @@ h5 {
 .slider-blog {
     @include list-null;
     border: 1px solid $color-divider;
-    background-color: #fff;
-    box-shadow: 0px 15px 50px #EFF4FF;
+    background-color: $color-white;
+    box-shadow: 0px $base*4 $base*12 $color-blue-50;
 
     &__item {
         padding: $base*15 $base*9;
@@ -629,16 +666,16 @@ h5 {
 
         &-images {
             display: grid;
-            grid-template-rows: repeat(2, 120px);
-            grid-template-columns: repeat(3, 120px);
-            grid-gap: 12px;
+            grid-template-rows: repeat(2, $base*30);
+            grid-template-columns: repeat(3, $base*30);
+            grid-gap: $base*3;
 
             .image-link {
                 display: block;
-                border-radius: 5px;
+                border-radius: $base;
                 position: relative;
                 overflow: hidden;
-                box-shadow: 0px 15px 100px #E5EBF8;
+                box-shadow: 0px $base*4 $base*25 $color-blue-50;
 
                 &:hover {
                     .loupe {
@@ -667,7 +704,7 @@ h5 {
                     width: $base*16;
                     height: $base*16;
                     border-radius: 100%;
-                    background: #fff url(../images/loupe.svg) no-repeat 50% 50%;
+                    background: $color-white url(../images/loupe.svg) no-repeat 50% 50%;
                     transition: $transition;
 
                 }
@@ -685,7 +722,7 @@ h5 {
                     grid-column: 1/3;
 
                     &::before {
-                        background: linear-gradient(transparent, rgba(#FFC735, .44));
+                        background: linear-gradient(transparent, rgba($color-yellow-500, .44));
                     }
                 }
 
@@ -694,7 +731,7 @@ h5 {
                     grid-column: 3/4;
 
                     &::before {
-                        background: linear-gradient(transparent, rgba(#FF3535, .48));
+                        background: linear-gradient(transparent, rgba($color-red-500, .48));
                     }
                 }
 
@@ -704,7 +741,7 @@ h5 {
                     ;
 
                     &::before {
-                        background: linear-gradient(transparent, rgba(#35AAFF, .68));
+                        background: linear-gradient(transparent, rgba($color-cian-500, .68));
                     }
                 }
 
@@ -717,7 +754,7 @@ h5 {
 
             .text {
                 line-height: 171%;
-                font-size: 14px;
+                font-size: $fs-md;
                 margin-bottom: $base*9;
             }
         }
@@ -749,7 +786,7 @@ h5 {
 
 // === QUOTES ===
 .section-quotes {
-    background: linear-gradient(#eaf0ff, #f6f9ff);
+    background: linear-gradient($color-blue-50, $color-gray-50);
     ;
 
     .section-inner {
@@ -782,15 +819,15 @@ h5 {
 
     &__item {
         border: 1px solid $color-divider;
-        background-color: #fff;
+        background-color: $color-white;
         padding: $base*10 $base*18 $base*13;
         position: relative;
-        box-shadow: 0 5px 50px #f3f5fa;
+        box-shadow: 0 $base $base*12 $color-blue-50;
 
         &-text {
             line-height: 2;
             font-size: $fs-md;
-            color: #676F95;
+            color: $color-gray-800;
 
         }
 
@@ -803,7 +840,7 @@ h5 {
             height: $base*16;
             border-radius: 100%;
             overflow: hidden;
-            background-color: #fff;
+            background-color: $color-white;
             margin-top: -$base*8;
         }
     }
@@ -812,7 +849,6 @@ h5 {
 // === / QUOTES ===
 
 // === FAQ ===
-.section-faq {}
 
 .faq-accordion {
     @include list-null;
@@ -827,14 +863,14 @@ h5 {
 
 
             #{$parent}-trigger {
-                color: #495274;
+                color: $color-gray-800;
                 font-weight: $fw-bold;
 
                 &-icon {
                     transform: rotate(0);
 
                     .arrow {
-                        stroke: #495274;
+                        stroke: $color-gray-800;
                     }
                 }
             }
@@ -858,7 +894,7 @@ h5 {
                 transform: rotate(180deg);
 
                 .arrow {
-                    stroke: #8e96b7;
+                    stroke: $color-gray-400;
                 }
             }
 
@@ -894,8 +930,8 @@ h5 {
 .section-get-started {
     position: relative;
     text-align: center;
-    color: #fff;
-    background: linear-gradient(229.32deg, #6888FF 12.77%, #5E80FF 73.11%);
+    color: $color-white;
+    background: linear-gradient($color-blue-100, $color-blue-300);
 
     &::before {
         position: absolute;
@@ -910,7 +946,7 @@ h5 {
 
     h2,
     h5 {
-        color: #fff;
+        color: $color-white;
     }
 
     .section-inner {
@@ -930,15 +966,12 @@ h5 {
 
 // === NEWSLETTER ===
 .section-newsletter {
-    background-color: #FCFDFF;
+    background-color: $color-gray-50;
 
     .section-inner {
         display: flex;
         justify-content: space-between;
     }
-
-    &__left,
-    &__right {}
 
     &__left {
         flex-basis: 35%;
@@ -946,7 +979,7 @@ h5 {
         &-title {
             @include quicksand;
 
-            color: #3D4F9F;
+            color: $color-blue-900;
             font-weight: $fw-bold;
             margin-bottom: $base*5;
             font-size: $fs-lg;
@@ -992,7 +1025,7 @@ h5 {
 
     margin-left: $base*24;
     margin-top: $base*7;
-    color: #aeb8d0;
+    color: $color-gray-200;
     font-size: $fs-sm;
     font-weight: $fw-medium;
 }
