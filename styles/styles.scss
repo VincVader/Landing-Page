@@ -1025,10 +1025,12 @@ h2 {
         &-title {
             @include quicksand;
 
+            text-transform: none;
             color: $color-blue-900;
             font-weight: $fw-bold;
             margin-bottom: $base*5;
             font-size: $fs-lg;
+            letter-spacing: 0;
         }
 
         &-text {

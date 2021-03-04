@@ -599,10 +599,12 @@ h2 {
     flex-basis: 35%; }
     .section-newsletter__left-title {
       font-family: 'Quicksand', sans-serif;
+      text-transform: none;
       color: #3d4f9f;
       font-weight: 700;
       margin-bottom: 20px;
-      font-size: 18px; }
+      font-size: 18px;
+      letter-spacing: 0; }
     .section-newsletter__left-text {
       line-height: 2;
       font-size: 15px; }
