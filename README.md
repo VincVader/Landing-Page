@@ -1,6 +1,14 @@
-# Landing Page
+# Landing page
 
-app description
+### Written with:
+
+- HTML
+- CSS/SCSS
+- JavaScript
+- Swiper.js
+- fsloghtbox.js
+- Gulp
+
 
 ## My contacts
 

@@ -1,1 +1,4 @@
-/styles/styles.css
+dist/**/*.css
+dist/**/*.html
+build/**/*.css
+src/**/*.css
